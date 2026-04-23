@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
+  <defs>
+    <radialGradient id="wax" cx="0.35" cy="0.35" r="0.8">
+      <stop offset="0" stop-color="#c94a4a"/>
+      <stop offset="0.6" stop-color="#9b3a3a"/>
+      <stop offset="1" stop-color="#5c1f1f"/>
+    </radialGradient>
+  </defs>
+  <!-- drip shape -->
+  <path d="M90 10
+           C 140 20, 170 55, 168 95
+           C 172 135, 140 165, 95 168
+           C 55 172, 18 150, 14 105
+           C 8 70, 35 25, 90 10 Z"
+        fill="url(#wax)" stroke="#3b1414" stroke-width="1"/>
+  <!-- ring -->
+  <circle cx="90" cy="90" r="58" fill="none" stroke="#f5f1e8" stroke-width="1.5" opacity="0.65"/>
+  <circle cx="90" cy="90" r="52" fill="none" stroke="#f5f1e8" stroke-width="0.8" opacity="0.5"/>
+  <!-- monogram N -->
+  <text x="90" y="108" text-anchor="middle" font-family="Georgia, serif"
+        font-size="64" font-weight="bold" fill="#f5f1e8" opacity="0.9">N</text>
+  <!-- top text curve -->
+  <path id="curve" d="M40 90 A 50 50 0 0 1 140 90" fill="none"/>
+  <text font-family="Georgia, serif" font-size="9" fill="#f5f1e8"
+        letter-spacing="3" opacity="0.85">
+    <textPath href="#curve" startOffset="50%" text-anchor="middle">BALLOTAGE · COMMISSIE</textPath>
+  </text>
+</svg>

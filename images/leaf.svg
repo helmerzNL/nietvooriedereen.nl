@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120">
+  <g fill="none" stroke="#4a5d3a" stroke-width="1.5" stroke-linecap="round">
+    <!-- central leaf -->
+    <path d="M100 20 C 60 30, 30 55, 25 80 C 55 92, 95 90, 100 100 C 105 90, 145 92, 175 80 C 170 55, 140 30, 100 20 Z"
+          fill="#4a5d3a" fill-opacity="0.15"/>
+    <path d="M100 20 V 100"/>
+    <path d="M100 35 C 85 40, 70 50, 55 65"/>
+    <path d="M100 50 C 80 55, 65 65, 45 75"/>
+    <path d="M100 65 C 80 70, 60 77, 40 80"/>
+    <path d="M100 80 C 80 82, 60 82, 40 80"/>
+    <path d="M100 35 C 115 40, 130 50, 145 65"/>
+    <path d="M100 50 C 120 55, 135 65, 155 75"/>
+    <path d="M100 65 C 120 70, 140 77, 160 80"/>
+    <path d="M100 80 C 120 82, 140 82, 160 80"/>
+  </g>
+</svg>

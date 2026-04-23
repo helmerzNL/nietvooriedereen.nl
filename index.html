@@ -102,6 +102,76 @@
       font-size:.8rem;color:var(--mist);border-top:1px solid #e5dfd0;
     }
 
+    /* ornamental divider */
+    .ornament{display:block;margin:0 auto 2.5rem;width:240px;opacity:.6}
+
+    /* ballotage steps */
+    .ballotage{display:grid;grid-template-columns:160px 1fr;gap:3rem;align-items:start;margin-top:3rem}
+    .ballotage .seal{width:100%;max-width:180px}
+    .steps{list-style:none;counter-reset:step;display:grid;gap:1.25rem}
+    .steps li{
+      counter-increment:step;position:relative;padding:1rem 1rem 1rem 3.5rem;
+      background:#fff;border:1px solid #e5dfd0;box-shadow:0 2px 20px rgba(0,0,0,.04);
+    }
+    .steps li::before{
+      content:counter(step, upper-roman);position:absolute;left:1rem;top:.85rem;
+      font-family:Georgia,serif;font-size:1.1rem;color:var(--gold);
+      font-variant:small-caps;letter-spacing:.1em;min-width:2rem;
+    }
+    .steps li strong{font-weight:400;font-variant:small-caps;letter-spacing:.1em;color:var(--moss);display:block;margin-bottom:.25rem}
+    @media(max-width:720px){.ballotage{grid-template-columns:1fr;text-align:center}.ballotage .seal{margin:0 auto 1rem;max-width:140px}}
+
+    /* facilities */
+    .facilities{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:3rem}
+    .facility{background:#fff;padding:1.75rem 1.5rem;border:1px solid #e5dfd0;text-align:center;box-shadow:0 2px 20px rgba(0,0,0,.04)}
+    .facility svg{width:48px;height:48px;stroke:var(--moss);fill:none;stroke-width:1.5;margin-bottom:.75rem;stroke-linecap:round;stroke-linejoin:round}
+    .facility h4{font-weight:400;font-variant:small-caps;letter-spacing:.12em;color:var(--bark);margin-bottom:.5rem;font-size:1rem}
+    .facility p{font-size:.92rem;color:#4a3e32}
+
+    /* faq */
+    .faq{max-width:780px;margin:3rem auto 0}
+    .faq details{
+      background:#fff;border:1px solid #e5dfd0;margin-bottom:.75rem;
+      box-shadow:0 2px 20px rgba(0,0,0,.04);
+    }
+    .faq summary{
+      cursor:pointer;padding:1.1rem 1.5rem;font-variant:small-caps;letter-spacing:.1em;
+      color:var(--bark);list-style:none;display:flex;justify-content:space-between;align-items:center;
+    }
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary::after{content:"+";color:var(--gold);font-size:1.4rem;transition:transform .3s}
+    .faq details[open] summary::after{transform:rotate(45deg)}
+    .faq details p{padding:0 1.5rem 1.3rem;color:#4a3e32;font-style:italic}
+
+    /* press */
+    .press{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;margin-top:3rem}
+    .press article{
+      background:#fff;padding:2rem;border:1px solid #e5dfd0;
+      box-shadow:0 2px 20px rgba(0,0,0,.04);display:flex;flex-direction:column;
+    }
+    .press .logo{
+      font-variant:small-caps;letter-spacing:.25em;font-size:.85rem;
+      color:var(--gold);padding-bottom:1rem;margin-bottom:1.25rem;
+      border-bottom:1px solid #e5dfd0;font-weight:bold;
+    }
+    .press blockquote{border:none;padding:0;font-size:1rem}
+    .press .rate{margin-top:1.25rem;color:var(--gold);letter-spacing:.3em;font-size:.9rem}
+
+    /* sustainability */
+    .sustain{background:#ede6d3;padding:5rem 1.5rem}
+    .sustain-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 280px;gap:3rem;align-items:center}
+    .sustain-inner .leaf{width:100%}
+    .sustain .pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-top:2rem}
+    .sustain .pillar h4{font-variant:small-caps;letter-spacing:.1em;color:var(--moss);font-weight:400;margin-bottom:.4rem}
+    .sustain .pillar p{font-size:.92rem}
+    @media(max-width:760px){.sustain-inner{grid-template-columns:1fr}.sustain-inner .leaf{max-width:220px;margin:0 auto}}
+
+    /* about family */
+    .about{display:grid;grid-template-columns:240px 1fr;gap:3rem;align-items:center;margin-top:3rem}
+    .about .crest{width:100%;max-width:240px}
+    .about blockquote{margin-top:1.5rem}
+    @media(max-width:720px){.about{grid-template-columns:1fr;text-align:center}.about .crest{max-width:180px;margin:0 auto}}
+
     @media (max-width:640px){
       nav ul{display:none}
       section{padding:3.5rem 1.25rem}
@@ -117,7 +187,10 @@
     <li><a href="#het-landgoed">Het landgoed</a></li>
     <li><a href="#villa's">Villa's</a></li>
     <li><a href="#kavels">Kavels</a></li>
-    <li><a href="#bewoners">Bewoners</a></li>
+    <li><a href="#ballotage">Ballotage</a></li>
+    <li><a href="#voorzieningen">Voorzieningen</a></li>
+    <li><a href="#pers">Pers</a></li>
+    <li><a href="#over-ons">Over ons</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -205,6 +278,75 @@
   </table>
 </section>
 
+<section id="ballotage">
+  <h2>De ballotageprocedure <em>in zes zorgvuldige stappen</em></h2>
+  <img class="ornament" src="images/ornament.svg" alt="" />
+  <p class="lead">
+    Toelating tot het landgoed is geen recht — het is een gunst, liefst erfelijk.
+    Onze commissie neemt u stap voor stap door een proces dat even grondig is als ontmoedigend.
+  </p>
+  <div class="ballotage">
+    <img class="seal" src="images/seal.svg" alt="Lakzegel van de ballotagecommissie" />
+    <ol class="steps">
+      <li><strong>Voorselectie</strong>Wij googelen u. Grondig. En uw partner. En uw vorige partner.</li>
+      <li><strong>Aanmeldformulier</strong>Zesentwintig pagina's, inclusief golfhandicap, stamboom en favoriete componist (tip: geen Coldplay).</li>
+      <li><strong>Proefdiner</strong>Vier gangen, drie generaties, twee wijnen die u verondersteld wordt te herkennen. U betaalt.</li>
+      <li><strong>Referenties</strong>Drie referentiebrieven — waarvan minimaal één van iemand met een dubbele achternaam en een landhuis.</li>
+      <li><strong>Huisbezoek</strong>De commissie bezoekt uw huidige woning. Let op de eerste indruk; die is tevens de enige.</li>
+      <li><strong>Besluit</strong>U ontvangt binnen zes tot acht weken bericht. Of niet. Dat is dan ook een bericht.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="voorzieningen">
+  <h2>Voorzieningen <em>& faciliteiten</em></h2>
+  <p class="lead">
+    Alles wat u nodig heeft, binnen handbereik — zolang die hand tot de juiste familie behoort.
+  </p>
+  <div class="facilities">
+    <div class="facility">
+      <svg viewBox="0 0 48 48"><path d="M8 40V20l16-10 16 10v20"/><path d="M8 40h32"/><path d="M18 40V28h12v12"/></svg>
+      <h4>Ontmoetingspaviljoen "De Afstand"</h4>
+      <p>Een sfeervolle plek voor ontmoetingen van maximaal twee huishoudens tegelijk, op gepaste onderlinge distantie.</p>
+    </div>
+    <div class="facility">
+      <svg viewBox="0 0 48 48"><path d="M10 38c4-10 10-14 14-14s10 4 14 14"/><path d="M18 22c0-4 2-8 6-8s6 4 6 8"/><circle cx="20" cy="20" r="1.5" fill="currentColor"/></svg>
+      <h4>Privé-boswachter</h4>
+      <p>Spreekt uitsluitend Frans en knikt alleen naar wie hij herkent. Herten zijn bij naam bekend.</p>
+    </div>
+    <div class="facility">
+      <svg viewBox="0 0 48 48"><rect x="6" y="18" width="36" height="22" rx="2"/><path d="M6 28h36"/><path d="M14 18V12a10 10 0 0 1 20 0v6"/></svg>
+      <h4>Gedeelde paardenbak</h4>
+      <p>Zonder paarden. Dat bevordert de rust. Tevens tennisbaan, mits u de juiste tennisclub heeft.</p>
+    </div>
+    <div class="facility">
+      <svg viewBox="0 0 48 48"><path d="M6 40V16l18-8 18 8v24"/><path d="M20 40V28h8v12"/><path d="M14 24l10-5 10 5"/></svg>
+      <h4>Slagboom met kenteken&shy;herkenning</h4>
+      <p>Herkent uw auto, uw merk, en desgewenst uw status. Postbezorgers worden beleefd bij de slagboom afgewezen.</p>
+    </div>
+    <div class="facility">
+      <svg viewBox="0 0 48 48"><path d="M24 6l4 12h12l-10 8 4 14-10-8-10 8 4-14-10-8h12z"/></svg>
+      <h4>Bibliotheek met leeszaal</h4>
+      <p>Eikenhouten lambrisering, 6.000 gelezen boeken, 40.000 ongelezen boeken. Stilte is gewaarborgd door gebrek aan bezoekers.</p>
+    </div>
+    <div class="facility">
+      <svg viewBox="0 0 48 48"><path d="M8 34c6-4 10-4 16 0s10 4 16 0"/><path d="M8 26c6-4 10-4 16 0s10 4 16 0"/><path d="M8 18c6-4 10-4 16 0s10 4 16 0"/></svg>
+      <h4>Privé-aanlegsteiger</h4>
+      <p>Voor uw sloep, uw zeilboot, of — wat wij het liefste zien — helemaal niets. Leegte heeft hier allure.</p>
+    </div>
+    <div class="facility">
+      <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><path d="M24 12v12l8 4"/></svg>
+      <h4>Glasvezel tot aan het hek</h4>
+      <p>Daarna mag u zelf graven. Dat houdt de toevloed van thuiswerkende consultants binnen de perken.</p>
+    </div>
+    <div class="facility">
+      <svg viewBox="0 0 48 48"><path d="M10 40V14h28v26"/><path d="M10 22h28"/><path d="M18 40V30h4v10M26 40V30h4v10"/></svg>
+      <h4>Concierge-dienst</h4>
+      <p>Regelt vrijwel alles — behalve contact met de buren. Dat blijft een persoonlijke verantwoordelijkheid, liefst vermeden.</p>
+    </div>
+  </div>
+</section>
+
 <section class="quotes" id="bewoners">
   <div class="inner">
     <blockquote>
@@ -219,6 +361,119 @@
       "Je hebt hier alle ruimte om zowel binnen als buiten te leven. En om mensen buiten te laten staan."
       <footer>— Anonieme bewoner, kavel C</footer>
     </blockquote>
+  </div>
+</section>
+
+<section id="pers">
+  <h2>In de pers <em>(voor zover die is uitgenodigd)</em></h2>
+  <img class="ornament" src="images/ornament.svg" alt="" />
+  <div class="press">
+    <article>
+      <div class="logo">Quote Weekend</div>
+      <blockquote>"Landgoed Nietvooriedereen is wat u overhoudt als u álles heeft: een kavel, een hek, en het stille genoegen dat uw zwager níet in aanmerking komt."</blockquote>
+      <div class="rate">★ ★ ★ ★ ★</div>
+    </article>
+    <article>
+      <div class="logo">Residence Rural</div>
+      <blockquote>"Een meesterlijk gecomponeerd stukje Nederland waar horizontale daklijnen en verticale statusindicatoren in perfecte harmonie samenkomen."</blockquote>
+      <div class="rate">★ ★ ★ ★ ★</div>
+    </article>
+    <article>
+      <div class="logo">Het Beukenhaagblad</div>
+      <blockquote>"De hoogte van de haag overtreft ieder vergelijkbaar landgoed in de Benelux. Hier wonen mensen die niet gezien willen worden — en dat lukt voortreffelijk."</blockquote>
+      <div class="rate">★ ★ ★ ★ ★</div>
+    </article>
+  </div>
+</section>
+
+<section>
+  <h2>Veelgestelde vragen <em>(die wij liever niet beantwoorden)</em></h2>
+  <div class="faq">
+    <details>
+      <summary>Mag ik een schuurtje plaatsen?</summary>
+      <p>Nee.</p>
+    </details>
+    <details>
+      <summary>Is er een speeltuin voor de kinderen?</summary>
+      <p>De kinderen hebben 41.000 m² tot hun beschikking. Dat is de speeltuin.</p>
+    </details>
+    <details>
+      <summary>Kan ik een stuk van mijn kavel verkopen?</summary>
+      <p>Dat kunt u proberen. De commissie zal de koper vervolgens afwijzen, waarna u alsnog eigenaar bent. Heeft u verder nog vragen?</p>
+    </details>
+    <details>
+      <summary>Zijn er regels voor de kleur van de voordeur?</summary>
+      <p>Ja, zeven. Alle zeven zijn tinten "bosbruin". De achtste kleur ("diep beukenbruin") is voorbehouden aan kavel A.</p>
+    </details>
+    <details>
+      <summary>Is de bezorging van maaltijdboxen toegestaan?</summary>
+      <p>Nee. Er is echter een concierge die boodschappen doet bij een slager die niet op internet te vinden is.</p>
+    </details>
+    <details>
+      <summary>Wat als ik de ballotage niet doorsta?</summary>
+      <p>Dan heeft het systeem gewerkt zoals bedoeld. Wij wensen u veel succes elders — er zijn ook heel charmante nieuwbouwwijken.</p>
+    </details>
+    <details>
+      <summary>Wordt mijn achternaam echt beoordeeld?</summary>
+      <p>Wij beoordelen niets. Wij noteren slechts.</p>
+    </details>
+  </div>
+</section>
+
+<section class="sustain" id="duurzaamheid">
+  <div class="sustain-inner">
+    <div>
+      <h2 style="text-align:left">Rentmeesterschap <em style="display:inline">& duurzaamheid</em></h2>
+      <p>
+        Een landgoed van deze allure vraagt om zorg voor volgende generaties — bij voorkeur uw eigen.
+        Wij zijn CO₂-neutraal zolang er niemand komt, en biodivers zolang de hertjes
+        blijven meewerken. Rewilding is geen trend, maar een uitstekend excuus om paden af te sluiten.
+      </p>
+      <div class="pillars">
+        <div class="pillar">
+          <h4>Energie</h4>
+          <p>Geothermie onder elke villa. Zonnepanelen uitsluitend aan de boszijde, want opvallen is niet chic.</p>
+        </div>
+        <div class="pillar">
+          <h4>Water</h4>
+          <p>Eigen helofytenfilter. Regenwater wordt hergebruikt voor de haag — die drie meter wordt ze niet vanzelf.</p>
+        </div>
+        <div class="pillar">
+          <h4>Biodiversiteit</h4>
+          <p>Vierentwintig vlindersoorten, elf soorten vleermuizen, en één buurman die hier nooit meer weg wil.</p>
+        </div>
+        <div class="pillar">
+          <h4>Materiaal</h4>
+          <p>Biobased en lokaal gezaagd. Het hout komt uit het eigen bos; het bos komt weer terug, met geduld.</p>
+        </div>
+      </div>
+    </div>
+    <img class="leaf" src="images/leaf.svg" alt="Stilistisch beukenblad" />
+  </div>
+</section>
+
+<section id="over-ons">
+  <h2>Over ons <em>— de familie achter het hek</em></h2>
+  <img class="ornament" src="images/ornament.svg" alt="" />
+  <div class="about">
+    <img class="crest" src="images/crest.svg" alt="Wapenschild van het landgoed met twee beukenbladeren, een hekwerk en de spreuk Non Omnibus" />
+    <div>
+      <p>
+        Het landgoed werd in 1887 gesticht door generaal b.d. jhr. dr. ir. Everhard van Dalen-tot-Wolde,
+        een man van weinig woorden en opvallend veel land. Hij geloofde dat échte rust begint
+        waar de openbare weg eindigt — en liet daar vervolgens een hek plaatsen.
+      </p>
+      <p style="margin-top:1rem">
+        Vier generaties later beheert de familie het landgoed nog altijd met dezelfde
+        gezonde argwaan jegens nieuwkomers. Onze spreuk, <em>Non Omnibus</em> — "niet voor allen" —
+        siert sinds 1902 het wapen, de briefpapieren en, indien nodig, de ingangspoort.
+      </p>
+      <blockquote>
+        "Een landgoed is geen vastgoedinvestering. Het is een belofte aan uw voorouders
+        dat u hun selectie-inspanningen niet in de wind zult slaan."
+        <footer>— Jhr. H. van Dalen-tot-Wolde, huidige rentmeester</footer>
+      </blockquote>
+    </div>
   </div>
 </section>
 

@@ -1,17 +1,206 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>nietvooriedereen.nl</title>
-<style>
-  body { font-family: system-ui, -apple-system, sans-serif; max-width: 720px; margin: 4rem auto; padding: 0 1rem; line-height: 1.6; color: #222; }
-  h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-  p { color: #555; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landgoed Nietvooriedereen — Een buitenkans tussen hek en heg</title>
+  <meta name="description" content="Landgoed Nietvooriedereen: exclusief wonen op het snijvlak van exclusiviteit, uitsluiting en heel veel tuin. Kavels vanaf 20.000 m² — en écht niet voor iedereen." />
+  <style>
+    :root {
+      --cream: #f5f1e8;
+      --bark:  #3b2e22;
+      --moss:  #4a5d3a;
+      --gold:  #a88a4a;
+      --mist:  #8a8577;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family: Georgia, 'Times New Roman', serif;
+      color: var(--bark);
+      background: var(--cream);
+      line-height: 1.7;
+    }
+    a{color:var(--moss);text-decoration:none;border-bottom:1px solid var(--gold)}
+    a:hover{color:var(--gold)}
+    nav{
+      position:sticky;top:0;z-index:10;
+      display:flex;justify-content:space-between;align-items:center;
+      padding:1.25rem 2rem;background:rgba(245,241,232,0.95);
+      backdrop-filter:blur(6px);border-bottom:1px solid #e5dfd0;
+    }
+    nav .brand{font-variant:small-caps;letter-spacing:.15em;font-size:.95rem;color:var(--bark)}
+    nav ul{display:flex;gap:1.5rem;list-style:none}
+    nav a{border:none;font-size:.9rem;font-variant:small-caps;letter-spacing:.1em;color:var(--mist)}
+    nav a:hover{color:var(--bark)}
+
+    .hero{
+      min-height:92vh;
+      display:flex;flex-direction:column;justify-content:center;align-items:center;
+      text-align:center;padding:6rem 1.5rem;
+      background:
+        linear-gradient(rgba(59,46,34,.45),rgba(59,46,34,.55)),
+        url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1600&q=80') center/cover;
+      color:var(--cream);
+    }
+    .hero .eyebrow{font-variant:small-caps;letter-spacing:.35em;font-size:.8rem;opacity:.85;margin-bottom:1rem}
+    .hero h1{font-size:clamp(2.2rem,5vw,4rem);font-weight:400;max-width:16ch;line-height:1.15;margin-bottom:1.5rem}
+    .hero p{max-width:38ch;font-style:italic;opacity:.9;margin-bottom:2.5rem}
+    .btn{
+      display:inline-block;padding:.9rem 2rem;border:1px solid var(--cream);
+      color:var(--cream);font-variant:small-caps;letter-spacing:.2em;font-size:.85rem;
+      transition:all .3s;border-bottom:1px solid var(--cream);
+    }
+    .btn:hover{background:var(--cream);color:var(--bark)}
+
+    section{padding:5rem 1.5rem;max-width:1100px;margin:0 auto}
+    h2{
+      font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:400;
+      margin-bottom:2rem;text-align:center;line-height:1.2;
+    }
+    h2 em{font-style:italic;color:var(--moss);display:block}
+    .lead{max-width:55ch;margin:0 auto 2rem;text-align:center;color:#4a3e32}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;margin-top:3rem}
+    .card{
+      background:#fff;padding:2rem;border:1px solid #e5dfd0;
+      box-shadow:0 2px 20px rgba(0,0,0,.04);
+    }
+    .card h3{font-weight:400;font-variant:small-caps;letter-spacing:.1em;color:var(--moss);margin-bottom:1rem}
+
+    .quotes{background:#ede6d3;padding:5rem 1.5rem}
+    .quotes .inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2.5rem}
+    blockquote{
+      font-style:italic;font-size:1.05rem;color:#4a3e32;
+      border-left:2px solid var(--gold);padding-left:1.5rem;
+    }
+    blockquote footer{margin-top:1rem;font-style:normal;font-size:.85rem;
+      font-variant:small-caps;letter-spacing:.1em;color:var(--mist)}
+
+    table{width:100%;border-collapse:collapse;margin-top:2rem;background:#fff}
+    th,td{padding:1rem;text-align:left;border-bottom:1px solid #e5dfd0}
+    th{font-variant:small-caps;letter-spacing:.1em;color:var(--moss);font-weight:400}
+    .status-sold{color:#9b3a3a;font-variant:small-caps}
+    .status-res{color:var(--gold);font-variant:small-caps}
+
+    footer.site{
+      background:var(--bark);color:#c8c0b0;padding:3rem 1.5rem;text-align:center;
+      font-size:.85rem
+    }
+    footer.site a{color:var(--gold);border:none}
+    .fine{opacity:.55;font-size:.75rem;margin-top:1.5rem;max-width:60ch;margin-inline:auto}
+
+    @media (max-width:640px){
+      nav ul{display:none}
+      section{padding:3.5rem 1.25rem}
+    }
+  </style>
 </head>
 <body>
-  <h1>nietvooriedereen.nl</h1>
-  <p>Welkom. Deze site is in aanbouw.</p>
+
+<nav>
+  <div class="brand">Landgoed Nietvooriedereen</div>
+  <ul>
+    <li><a href="#het-landgoed">Het landgoed</a></li>
+    <li><a href="#kavels">Kavels</a></li>
+    <li><a href="#bewoners">Bewoners</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow">Exclusief · Besloten · Selectief</div>
+  <h1>Een buitenkans tussen hek en heg</h1>
+  <p>Op het snijvlak van exclusiviteit, uitsluiting en opvallend veel tuin ligt Landgoed Nietvooriedereen — voor wie hoort bij de enkelen die er thuishoren.</p>
+  <a class="btn" href="#kavels">Bekijk de kavels (als u mag)</a>
+</header>
+
+<section id="het-landgoed">
+  <h2>Niet zomaar een landgoed. <em>En niet zomaar voor u.</em></h2>
+  <p class="lead">
+    Landgoed Nietvooriedereen is een buitengewoon woongebied voor mensen die graag buitengewoon
+    wonen — en vooral: buitengewoon weinig buren zien. In een prachtige omgeving aan het water,
+    omringd door een drie meter hoge beukenhaag, bouwt u samen met uw eigen aannemer (en onze
+    ballotagecommissie) een woning in een stijl met allure op een royale kavel van minimaal
+    <strong>20.000 m²</strong>. Want wie écht ruimtelijk wil wonen, telt geen vierkante meters —
+    die telt buurmannen.
+  </p>
+</section>
+
+<section>
+  <h2>Buitengewoon <em>veeleisend</em></h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Natuurschoon</h3>
+      <p>Bos, water en uitzicht op de villa van iemand die óók de ballotage heeft doorstaan. Herten grazen vrij. Postbezorgers worden vriendelijk tegengehouden bij de slagboom.</p>
+    </div>
+    <div class="card">
+      <h3>Vrijheid</h3>
+      <p>Vrijheid om te bouwen wat u wilt — mits het past binnen het 180 pagina's tellende beeldkwaliteitsplan, goedgekeurd door de Vereniging van Eigenaren en de rechterbuurman.</p>
+    </div>
+    <div class="card">
+      <h3>Bereikbaarheid</h3>
+      <p>Met de auto zit u zo op de snelweg. Met het OV zit u zo nergens, want dat hebben we eruit gehouden. Dat bevordert de rust én de selectie.</p>
+    </div>
+  </div>
+</section>
+
+<section id="kavels">
+  <h2>De beschikbare kavels <em>(voor zover u in aanmerking komt)</em></h2>
+  <p class="lead">
+    Alle kavels zijn minimaal 20.000 m² en grenzen aan water, bos, of een ander soort discretie.
+    Voor de volledige kaart vragen wij u eerst het aanmeldformulier én drie referentiebrieven in te dienen.
+  </p>
+  <table>
+    <thead>
+      <tr><th>Kavel</th><th>Oppervlakte</th><th>Ligging</th><th>Vanaf</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>A · De Voorname</td><td>22.500 m²</td><td>Aan het Eesermeer</td><td>€ 3.950.000</td><td class="status-sold">Vergeven</td></tr>
+      <tr><td>B · De Afgeschermde</td><td>28.000 m²</td><td>Bosrand, geen pad</td><td>€ 4.275.000</td><td class="status-res">In ballotage</td></tr>
+      <tr><td>C · De Wij-Bekijken-U-Eerst</td><td>34.000 m²</td><td>Bovenop de Woldberg</td><td>Op aanvraag</td><td class="status-res">Op uitnodiging</td></tr>
+      <tr><td>D · De Niet Voor U</td><td>41.000 m²</td><td>Ergens daar</td><td>—</td><td class="status-sold">Echt niet</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="quotes" id="bewoners">
+  <div class="inner">
+    <blockquote>
+      "Alles is hier in de buurt, behalve andere mensen. Met de fiets bereikbaar — mits u een eigen fietspad aanlegt. Heerlijk."
+      <footer>— Familie Van Dalen-tot-Wolde, kavel A</footer>
+    </blockquote>
+    <blockquote>
+      "Wij hebben ervoor gekozen om biobased te bouwen: uitsluitend met materialen waar niemand anders toegang toe heeft."
+      <footer>— De heer en mevrouw Exclusief, kavel B</footer>
+    </blockquote>
+    <blockquote>
+      "Je hebt hier alle ruimte om zowel binnen als buiten te leven. En om mensen buiten te laten staan."
+      <footer>— Anonieme bewoner, kavel C</footer>
+    </blockquote>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Interesse? <em>Wij nemen contact op. Misschien.</em></h2>
+  <p class="lead">
+    Stuurt u ons gerust een bericht — dan bekijken wij uw aanvraag, uw achternaam, uw golfhandicap
+    en de achternaam van uw grootouders. Hoort u binnen zes tot acht weken niks? Dan was het
+    helaas <em>niet voor u</em>.
+  </p>
+  <p style="text-align:center;margin-top:2rem">
+    <a class="btn" style="border-color:var(--bark);color:var(--bark)" href="mailto:ballotage@nietvooriedereen.nl">Dien uw kandidatuur in</a>
+  </p>
+</section>
+
+<footer class="site">
+  <div>Landgoed Nietvooriedereen · Ergens tussen hek en heg · The Netherlands</div>
+  <div style="margin-top:.75rem"><a href="mailto:ballotage@nietvooriedereen.nl">ballotage@nietvooriedereen.nl</a></div>
+  <p class="fine">
+    Deze website is een parodie. Alle overeenkomsten met bestaande landgoederen,
+    ballotagecommissies of hoge hagen berusten op toeval — of op kennismaking tijdens de tennisclub.
+  </p>
+</footer>
+
 </body>
 </html>

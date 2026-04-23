@@ -29,7 +29,8 @@
       padding:1.25rem 2rem;background:rgba(245,241,232,0.95);
       backdrop-filter:blur(6px);border-bottom:1px solid #e5dfd0;
     }
-    nav .brand{font-variant:small-caps;letter-spacing:.15em;font-size:.95rem;color:var(--bark)}
+    nav .brand{font-variant:small-caps;letter-spacing:.15em;font-size:.95rem;color:var(--bark);border:none;cursor:pointer}
+    nav .brand:hover{color:var(--moss)}
     nav ul{display:flex;gap:1.5rem;list-style:none}
     nav a{border:none;font-size:.9rem;font-variant:small-caps;letter-spacing:.1em;color:var(--mist)}
     nav a:hover{color:var(--bark)}
@@ -182,7 +183,7 @@
 <body>
 
 <nav>
-  <div class="brand">Landgoed Nietvooriedereen</div>
+  <a href="#top" class="brand">Landgoed Nietvooriedereen</a>
   <ul>
     <li><a href="#het-landgoed">Het landgoed</a></li>
     <li><a href="#villa's">Villa's</a></li>
@@ -195,7 +196,7 @@
   </ul>
 </nav>
 
-<header class="hero">
+<header class="hero" id="top">
   <div class="eyebrow">Exclusief · Besloten · Selectief</div>
   <h1>Een buitenkans tussen hek en heg</h1>
   <p>Op het snijvlak van exclusiviteit, uitsluiting en opvallend veel tuin ligt Landgoed Nietvooriedereen — voor wie hoort bij de enkelen die er thuishoren.</p>

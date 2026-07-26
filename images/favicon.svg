@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- shield -->
+  <path d="M32 3 58 12v22c0 14.5-11 23.5-26 26C17 57.5 6 48.5 6 34V12Z" fill="#1b2620"/>
+  <path d="M32 8.2 52.8 15.4V34c0 11.6-8.8 19-20.8 21.3C20 53 11.2 45.6 11.2 34V15.4Z"
+        fill="none" stroke="#b3903f" stroke-width="1.8"/>
+  <!-- beech leaf: the one mark that still reads at 16px -->
+  <path d="M32 13C16 25 12 41 32 58C52 41 48 25 32 13Z" fill="#ece6da"/>
+  <path d="M32 19V53" stroke="#1b2620" stroke-width="2.4" stroke-linecap="round"/>
+</svg>

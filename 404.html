@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Deze pagina is niet voor u — Landgoed Nietvooriedereen</title>
+<meta name="description" content="De opgevraagde pagina bestaat niet, of bestaat wel maar niet voor u. De commissie neemt binnen zes tot acht weken geen contact op." />
+<meta name="robots" content="noindex" />
+<meta name="theme-color" content="#1b2620" />
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+<style>
+:root{
+  --forest:#1b2620;--cream:#ece6da;--cream-soft:#a8b0a5;--gold:#b3903f;
+  --serif:ui-serif,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  min-height:100svh;min-height:100vh;
+  display:grid;place-items:center;text-align:center;
+  padding:clamp(1.5rem,6vw,4rem);
+  background:var(--forest);color:var(--cream);
+  font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased;
+}
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.04;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.gate{width:clamp(88px,22vw,124px);height:auto;margin:0 auto clamp(1.75rem,5vw,2.5rem)}
+.eyebrow{
+  font-family:var(--sans);font-style:normal;
+  font-size:.7rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1.1rem;
+}
+h1{
+  font-family:var(--serif);font-weight:400;line-height:1.1;letter-spacing:-.015em;
+  font-size:clamp(2rem,7vw,3.4rem);max-width:16ch;margin-inline:auto;text-wrap:balance;
+}
+h1 em{display:block;font-style:italic;color:var(--gold)}
+p{
+  font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,2.6vw,1.3rem);
+  color:var(--cream-soft);max-width:46ch;margin:1.5rem auto 0;
+}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin-top:2.5rem}
+a.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  min-height:48px;padding:.8rem 1.7rem;border-radius:99px;
+  font-size:.88rem;letter-spacing:.03em;font-weight:500;text-decoration:none;
+  border:1px solid transparent;transition:background .25s,color .25s,border-color .25s;
+}
+.solid{background:var(--cream);color:var(--forest)}
+.solid:hover{background:var(--gold)}
+.ghost{border-color:rgba(236,230,218,.5);color:var(--cream)}
+.ghost:hover{border-color:var(--cream);background:rgba(236,230,218,.12)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+.fine{
+  font-family:var(--sans);font-style:normal;font-size:.8rem;color:var(--cream-soft);
+  margin-top:clamp(2.5rem,7vw,4rem);max-width:56ch;
+}
+@media(prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<main>
+  <svg class="gate" viewBox="0 0 120 96" role="img" aria-label="Een gesloten hek">
+    <g stroke="#b3903f" stroke-width="2.4" fill="none" stroke-linecap="round">
+      <path d="M18 26v62M38 26v62M58 20v68M78 26v62M98 26v62"/>
+      <path d="M10 40h100M10 66h100"/>
+      <path d="M10 30c16-10 34-15 50-15s34 5 50 15"/>
+    </g>
+    <g stroke="#ece6da" stroke-width="2.2" fill="none" stroke-linecap="round" opacity=".55">
+      <path d="M6 88h108"/>
+    </g>
+  </svg>
+
+  <p class="eyebrow">Foutcode 404</p>
+  <h1>Deze pagina is <em>niet voor u</em></h1>
+  <p>
+    De door u opgevraagde pagina bestaat niet. Of zij bestaat wél, maar niet voor u — daarover
+    doet de commissie geen mededelingen. U ontvangt hierover binnen zes tot acht weken geen bericht.
+  </p>
+
+  <div class="actions">
+    <a class="btn solid" href="/">Terug naar de poort</a>
+    <a class="btn ghost" href="/#hofje">Het hofje bekijken</a>
+  </div>
+
+  <p class="fine">
+    Deze website is een parodie. Landgoed Nietvooriedereen bestaat niet: er zijn geen kavels,
+    geen woningen, geen hofje en geen ballotagecommissie.
+  </p>
+</main>
+</body>
+</html>
